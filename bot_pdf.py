@@ -38,10 +38,9 @@ def main():
         )
         chunks = text_splitter.split_text(text=text)
 
-        # Load embeddings
+        # Load embeddings using OpenAI
         embeddings, dimension = load_embedding_model(
-            embedding_model_name=os.getenv("EMBEDDING_MODEL"), 
-            config={"ollama_base_url": os.getenv("OLLAMA_BASE_URL")}
+            embedding_model_name="openai"
         )
 
         # Store chunks in Neo4j
@@ -56,8 +55,8 @@ def main():
             pre_delete_collection=True,
         )
 
-        # Load LLM
-        llm = load_llm(llm_name=os.getenv("LLM"), config={"ollama_base_url": os.getenv("OLLAMA_BASE_URL")})
+        # Load LLM using OpenAI
+        llm = load_llm(llm_name="gpt-3.5")
 
         qa = RetrievalQA.from_chain_type(
             llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever()
