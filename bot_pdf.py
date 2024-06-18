@@ -56,7 +56,7 @@ def main():
         )
 
         # Load LLM using OpenAI
-        llm = load_llm(llm_name="gpt-3.5")
+        llm = load_llm(llm_name="gpt-4")
 
         qa = RetrievalQA.from_chain_type(
             llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever()
