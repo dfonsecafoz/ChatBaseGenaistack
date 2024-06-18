@@ -1,7 +1,7 @@
 import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Neo4jVector
+from langchain_community.vectorstores import Neo4jVector
 from langchain.chains import RetrievalQA
 from langchain.callbacks.base import BaseCallbackHandler
 from chains import load_embedding_model, load_llm

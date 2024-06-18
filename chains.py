@@ -1,3 +1,4 @@
+# Atualização dos imports no chains.py
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.embeddings import BedrockEmbeddings
@@ -8,7 +9,6 @@ from langchain_community.chat_models import ChatOllama
 from langchain_community.chat_models import BedrockChat
 
 from langchain_community.graphs import Neo4jGraph
-
 from langchain_community.vectorstores import Neo4jVector
 
 from langchain.chains import RetrievalQAWithSourcesChain
